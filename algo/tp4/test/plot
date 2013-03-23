@@ -1,0 +1,10 @@
+set output "tri.ps"
+set terminal postscript
+set yrange [0:10000]
+set xlabel "Taille"
+set ylabel "Affectations/Comparaisons"
+plot x*log(x) title "n log n",\
+  x*x title "n*n",\
+  "data" using 1:2 title "Insertion" with points lt rgb "#FF0000",\
+  "data" using 1:3 title "Bulles" with points lt rgb "#00FF00",\
+  "data" using 1:4 title "Selection" with points lt rgb "#0000FF"
